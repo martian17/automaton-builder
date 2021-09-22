@@ -1,0 +1,50 @@
+body{
+    margin:0px;
+}
+
+
+#wrapper{
+    display:flex;
+}
+
+#control{
+    background-color:#aaa;
+    flex-grow: 1;
+    height:100vh;
+}
+
+#output{
+    width:400px;
+    height:100vh;
+    border-left:2px solid #888;
+}
+
+@media screen and (max-width: 1000px) {
+    #control{
+        width:60%;
+    }
+
+    #output{
+        width:40%;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #control{
+        width:100%;
+        min-height:60vw;
+        height:60vh;
+    }
+
+    #output{
+        width:100%;
+        min-height:40vw;
+        height:40vh;
+        border-left:none;
+        border-top:2px solid #888;
+    }
+    #wrapper{
+        display:block;
+    }
+}

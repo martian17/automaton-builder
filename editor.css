@@ -1,0 +1,45 @@
+/* Please see the article */
+
+.editor-wrapper{
+    font-family: "Fira Code", monospace;
+    position:relative;
+}
+
+.editor-wrapper>textarea, .editor-wrapper>pre:first-of-type {/*hack to get a higher priority*/
+    /* Both elements need the same text and space styling so they are directly on top of each other */
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    width: calc(100% - 32px);
+    height: 150px;
+    /* In the same place */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Can be scrolled */
+    overflow: auto;
+    white-space: nowrap; /* Allows textarea to scroll horizontally */
+}
+.editor-wrapper>textarea, .editor-wrapper>pre:first-of-type, .editor-wrapper>pre>code {
+    /* Also add text styles to highlighing tokens */
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+    tab-size: 2;
+}
+
+
+/* Move the textarea in front of the result */
+
+.editor-wrapper>textarea {
+    z-index: 1;/*comes out on top*/
+    /* Make textarea almost completely transparent */
+    color: transparent;
+    background: transparent;
+    caret-color: #8af; /* Or choose your favourite color */
+    /* No resize on textarea */
+    resize: none;
+}
+.editor-wrapper>pre {
+    z-index: 0;
+}
